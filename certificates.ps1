@@ -1,3 +1,14 @@
+# Check if keytool and openssl are available
+if (-not (Test-Path -Path "keytool.exe")) {
+    Write-Host "Error: 'keytool' is not found. Make sure you have the Java JDK installed and 'keytool' is in your PATH."
+    exit 1
+}
+
+if (-not (Test-Path -Path "openssl.exe")) {
+    Write-Host "Error: 'openssl' is not found. Make sure you have OpenSSL installed and 'openssl' is in your PATH."
+    exit 1
+}
+
 # Input Variables
 $KEY = $args[0]  # Path to Key File
 $CERT = $args[1]  # Path to Server Certificate
