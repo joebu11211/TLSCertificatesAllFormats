@@ -1,6 +1,17 @@
 #!/bin/bash
 # Created by Chris Wray
 
+# Check if keytool and openssl are available
+if ! command -v keytool &> /dev/null; then
+    echo "Error: 'keytool' is not found. Make sure you have the Java JDK installed and 'keytool' is in your PATH." >&2
+    exit 1
+fi
+
+if ! command -v openssl &> /dev/null; then
+    echo "Error: 'openssl' is not found. Make sure you have OpenSSL installed and 'openssl' is in your PATH." >&2
+    exit 1
+fi
+
 # Input Variables
 KEY=$1 #Path to Key File
 CERT=$2 #Path to Server Certificate
