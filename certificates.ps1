@@ -18,13 +18,13 @@ $STOREPASS = $args[4]  # Password for keystores
 $RSAPASS = $args[5]  # RSA Passwords
 
 # Formatting Variables
-$PKCS12 = "${APPName}.pfx"
-$PKCS12RSA = "${APPName}_RSA.pfx"
-$JKS = "${APPName}.jks"
-$JKSRSA = "${APPName}_RSA.jks"
-$RSAKEY = "${KEY}_RSA.key"
-$TEXTOUT = "${APPName}.txt"
-$ZIP = "${APPName}.zip"
+$PKCS12 = $APPName + ".pfx"
+$PKCS12RSA = $APPName + "_RSA.pfx"
+$JKS = $APPName + ".jks"
+$JKSRSA = $APPName + "_RSA.jks"
+$RSAKEY = $KEY + "_RSA.key"
+$TEXTOUT = $APPName + ".txt"
+$ZIP = $APPName + ".zip"
 
 # Actions
 Write-Host "First Arguments: " $KEY
